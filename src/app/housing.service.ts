@@ -7,7 +7,7 @@ import { HousingLocation } from './housinglocation';
 export class HousingService {
 
   constructor() { }
- 
+
   readonly url = 'http://localhost:3000/locations';
 
 
@@ -15,7 +15,7 @@ export class HousingService {
     const data = await fetch(this.url);
     return await data.json() ?? [];
   }
-  
+
   async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
     const data = await fetch(`${this.url}/${id}`);
     return await data.json() ?? {};
